@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Module 2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8bbce4a6-6107-405b-819a-e74f2b338b5d" class="page sans"><header><h1 class="page-title">Module 2</h1><p class="page-description"></p></header><div class="page-body"><h2 id="7fa128a6-3ea1-4602-bff9-78310f3cfa46" class=""><strong>Conversational AI tools</strong></h2><p id="d2fc8ff4-d2de-4e08-bbed-d0e78fa89d22" class="">Conversational AI includes general-purpose tools that can simulate a human conversation, as well as provide answers to questions on a wide variety of subjects. Workers might use conversational AI tools to help with work tasks, such as brainstorming or finding answers to low-stakes questions.</p><p id="b01ca5f9-b8f4-426f-ad7a-408e0e69e71d" class=""><strong>Example industries: </strong>Human resources, marketing, public relations, sales, education, project management, retail, copywriting, creative writing, product management</p><p id="41afd30e-d13d-4b2b-871b-08a48fb5b178" class="">Example tools include:</p><ul id="e110d295-4e25-4efc-9a94-edd6a7d3f554" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.anthropic.com/product">Anthropic Claude</a></strong></li></ul><ul id="dd438a83-d5bc-4b61-8996-007976fc5166" class="bulleted-list"><li style="list-style-type:disc"><ul id="dc6a2214-bdd3-4759-8db3-8393d7413a12" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Anthropic Claude can complete problem-solving tasks, like finding mathematical solutions, translating between languages, and summarizing long documents.</li></ul><ul id="6d7f9493-dab0-4ed1-bc03-8eed482a0cb3" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="5b645cf1-8588-4a14-a999-36fd92c11fc9" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://gemini.google.com/app">Gemini</a></strong></li></ul><ul id="a0a0ee0b-7298-46dd-a74b-9c1e8aa9a5c8" class="bulleted-list"><li style="list-style-type:disc"><ul id="82d3cb38-5208-4e86-8f45-aab60e998d9e" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Supercharge your creativity and productivity with Gemini. Chat to start writing, planning, learning and more with Google AI.</li></ul><ul id="7ad8f67f-ba6f-47c7-b312-3738d18c5d0b" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Both</li></ul></li></ul><ul id="1c1b50b3-be5f-4a62-b34a-9e9279f3bccb" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.microsoft.com/en-us/edge/features/copilot?form=MT00IS">Microsoft Copilot</a></strong></li></ul><ul id="d4427789-59b2-43e0-8794-6253d61b8306" class="bulleted-list"><li style="list-style-type:disc"><ul id="5982ef76-8278-4a45-b62b-695fff9801ae" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Integrated with Microsoft Edge, Microsoft Copilot can help with online searches to find information, compare products, and summarize web page content.</li></ul><ul id="5ec41135-3433-4e69-9597-8e20e773df43" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Both</li></ul></li></ul><ul id="2c62e08b-0bb6-4a82-b1e1-a78f3afc1c9f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://openai.com/chatgpt">ChatGPT</a></strong></li></ul><ul id="b757989b-8c6e-45bd-85c0-07f493fa1f3c" class="bulleted-list"><li style="list-style-type:disc"><ul id="75d9361c-be0a-4557-8ea5-14ebc939247a" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>ChatGPT can generate ideas, plan schedules, debug code, and proofread text.</li></ul><ul id="7679df8e-2dd4-4a06-85c5-2f83b35c9a01" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><h2 id="97615ff1-91a7-4b75-a87b-257407d67a8c" class=""><strong>Productivity and writing assistants</strong></h2><p id="f595cfc4-8ce5-4735-b40e-ecd4f5b2161a" class="">AI productivity and writing assistants can help with workplace tasks. They might provide grammar or spelling suggestions, generate a summary of a long document, or solve problems. Here are some examples:</p><ul id="93809629-6b0c-42ba-acba-a651afa69fe1" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.getclockwise.com/">Clockwise</a></strong></li></ul><ul id="2864c176-9699-4c0f-bc68-df71c460efa3" class="bulleted-list"><li style="list-style-type:disc"><ul id="b455dead-63a2-4f8b-9875-63735cdadabc" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Clockwise is a calendar tool that learns users’ work habits to automatically schedule and manage calendar events.</li></ul><ul id="8fd632d7-5513-4e28-a87d-f0ebe58c0f86" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Consulting, technology, sales</li></ul><ul id="8441ae90-f812-4f94-8618-a41f64882950" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="1c5ae6b5-f443-498b-90be-c80d54adcf65" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.grammarly.com/">Grammarly</a></strong></li></ul><ul id="1ec635fc-c684-4f5b-b518-5e6b104829fb" class="bulleted-list"><li style="list-style-type:disc"><ul id="4002f81e-4ee4-4f6e-b7a2-c7f5d0302ab6" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Grammarly is a writing assistant that can help users edit and write clear, concise text.</li></ul><ul id="eef9b3e9-0ceb-4893-be0e-36150dda3394" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Creative writing, education, marketing</li></ul><ul id="9c48e4ee-6549-499e-9359-4cfdac1eecf4" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="e7c5a061-471c-4318-97f1-0d981a82556b" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.jasper.ai/">Jasper</a></strong></li></ul><ul id="44833e36-b893-4343-a935-f01b6feeca9e" class="bulleted-list"><li style="list-style-type:disc"><ul id="ebaa8fd8-9386-4ab4-92b8-0989a24b3599" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Jasper is a writing assistant intended for marketing tasks, like drafting social media posts, emails, and landing page content.</li></ul><ul id="d27f5285-ea5b-40c3-85f8-b07cb2dd06c5" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Copywriting, marketing, sales</li></ul><ul id="f062256a-42f2-41d6-ad2d-8c4732baca78" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="5d9cf092-820b-4424-b1c6-0797b4917890" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://notebooklm.google/">NotebookLM</a></strong></li></ul><ul id="bcebd20d-76c5-4d24-a973-c14c82393f5d" class="bulleted-list"><li style="list-style-type:disc"><ul id="0724de89-1de2-4b0d-94e1-a64d162e2e75" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>NotebookLM integrates into document apps, like Google Docs, and helps summarize or ask specific questions about text, notes, and sources.</li></ul><ul id="41380bbb-cc6f-4169-9d37-31dfa00f508a" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Content writing, finance, sales</li></ul><ul id="f98c585d-f2a5-4e24-b4df-8f57c4e0e317" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Both</li></ul></li></ul><ul id="88129ee3-427c-4ab2-b8ba-da407892cd5f" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.notion.so/product/ai">Notion AI</a></strong></li></ul><ul id="466c1cc6-34d3-4783-a5cd-cde73bd38bda" class="bulleted-list"><li style="list-style-type:disc"><ul id="f92bf8d2-52f7-45ba-852f-20b97670b4b6" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Notion AI is a writing assistant built into Notion, a productivity and note-taking software tool.</li></ul><ul id="a15bb416-a9cf-4209-84fb-b859adbc0a42" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Development, marketing, product management, sales</li></ul><ul id="5fe5e694-88a7-4a64-aee9-afbce737737a" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="c1cabe97-0a11-4fd5-8e04-f8a550bdb8e2" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://zapier.com/apps/ai/integrations">AI by Zapier</a></strong></li></ul><ul id="c35ae9db-1023-4654-bf5f-c6f540379fa5" class="bulleted-list"><li style="list-style-type:disc"><ul id="d6a59fe5-e36b-412d-97ee-58a079f22b55" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>AI by Zapier is a built-in productivity tool that allows AI automation to be integrated with the apps and workflows already connected through Zapier.</li></ul><ul id="34b3b6d9-239c-428a-9e99-a8ddacfc0b57" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Engineering, marketing, project management, technology</li></ul><ul id="ddc11ccc-f2ab-495a-ada5-82720254027b" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><h2 id="8d1ec354-5305-422b-8957-ba42bbb84644" class=""><strong>Code-generative AI tools</strong></h2><p id="2ea4c0b5-4624-422a-acc3-7c14763573c8" class="">Code-generating tools can help generate, edit, or complete code for a variety of programming tasks in many different programming languages. Examples include:</p><ul id="abdc63fd-ca82-45dd-b7e1-ba7a94bcce89" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot</a></strong></li></ul><ul id="96c2798e-0ccb-4a2b-9a32-0772ad02b91d" class="bulleted-list"><li style="list-style-type:disc"><ul id="09d83f4b-1bed-4160-8d17-3e721b64c441" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Built into Android Studio, Studio Bot can generate code and answer questions about Android development.</li></ul><ul id="6e9ba9e6-0dbe-4e78-a665-b7b393b641f3" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Data science, software development, web development</li></ul><ul id="e7eee880-4688-4431-bd11-ef221554671f" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="2539be29-e48f-487b-9852-71f502303820" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://github.com/features/copilot">GitHub Copilot</a></strong></li></ul><ul id="6c3fd702-929c-499c-8dad-e924c57d4ccc" class="bulleted-list"><li style="list-style-type:disc"><ul id="6508e8c7-0fe6-48b3-ab82-1be89760d2b1" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Built into GitHub, Copilot can write and suggest code, suggest descriptions for pull requests, translate multiple languages into code, and index repositories.</li></ul><ul id="56a99ada-630f-470a-9d8b-52bc9db9cb0e" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Data science, software development, web development</li></ul><ul id="3377c5e7-a6db-408d-b27e-86a85f126af8" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Both</li></ul></li></ul><ul id="5691e959-894e-47da-bf69-47982aef52f8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://replit.com/ai">Replit AI</a></strong></li></ul><ul id="da44fa9b-8ee4-4458-9a58-9e5c249a133f" class="bulleted-list"><li style="list-style-type:disc"><ul id="c21639bc-6bbc-42f4-a22e-5571c62ffa58" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>This tool, built into Replit, is a cloud-based Integrated Development Environment (IDE) for programmers that can make suggestions, help explain code, and turn natural language into code.</li></ul><ul id="555b26e4-213f-4c24-8727-d74e04a1c069" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Data science, software development, web development</li></ul><ul id="7b6af144-c621-4623-8bc8-e983289b92ab" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="b749da86-569c-4b45-b835-563426a557ae" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.tabnine.com/">Tabnine</a></strong></li></ul><ul id="518768c3-255f-49ee-87f7-6e6170854072" class="bulleted-list"><li style="list-style-type:disc"><ul id="0fbe2bd1-bdcb-4b59-8408-1037806bd83b" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Tabnine can be a plugin to many popular code editors to help speed up delivery and keep code safe.</li></ul><ul id="0db0238a-7f3c-4fa8-b860-7a7cfa714f06" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Data science, software development, web development</li></ul><ul id="df0900d7-b55d-4192-a306-c679563ed1f9" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="2e9f3aaf-640e-4578-9549-867cf9119135" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://jupyter-ai.readthedocs.io/en/latest/">Jupyter AI</a></strong></li></ul><ul id="629e1738-654d-44e1-9f01-ca172060f665" class="bulleted-list"><li style="list-style-type:disc"><ul id="2f6021a5-4f5d-4acf-8b6f-ea1c9928fff0" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Jupyter is an open-source platform for coding, and this built-in tool includes a chat interface, which can be used to generate code, fix coding errors, and ask questions about files.</li></ul><ul id="fb2650cd-4114-4468-851a-bdc76797bb23" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Data science, software development, web development</li></ul><ul id="1cd2e74f-8d9c-48c5-bd81-04fd9116a7ca" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><h2 id="a6b8966a-206e-4685-ba05-78a799cec31c" class=""><strong>Image- and media-generative AI tools</strong></h2><p id="326e5078-8f61-4d7c-912c-8be9e59c3592" class="">Media-generating AI tools help workers with tasks like generating and editing images, video, and speech. Examples include:</p><ul id="e48ad81e-f1a5-4104-ad5a-f88a9dc8fdcc" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.adobe.com/sensei/generative-ai/firefly.html">Adobe Firefly</a></strong></li></ul><ul id="949ad2fd-5409-4e4e-bf98-a77936cad8ca" class="bulleted-list"><li style="list-style-type:disc"><ul id="8c8c839e-cca0-4642-b356-237a0fa6a64c" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Built into the Adobe suite, Firefly can generate and edit images.</li></ul><ul id="71fb5440-7e0a-4beb-b08a-3e4faa72a8dc" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Design, education, marketing</li></ul><ul id="4ab1741b-df66-427d-b3f7-e2bab4f5a1c0" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="60d9df9e-9760-4954-8c8e-3c90eecc2cb8" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.canva.com/magic-design/">Canva Magic Design™</a></strong></li></ul><ul id="5f7231c9-4439-47ed-835f-e5849e11063a" class="bulleted-list"><li style="list-style-type:disc"><ul id="782652c7-6639-4005-83f7-45ec8f4e9040" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Canva Magic Design is a tool that generates text and image content in Canva, an online graphic design tool.</li></ul><ul id="460ffb29-7539-442c-831c-861cbe0fd8ee" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Design, education, marketing</li></ul><ul id="2f50c4d2-5d2a-42ab-8262-8e64b032dc7b" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="5f04d474-06c5-4a93-a57f-687a9134f147" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://openai.com/dall-e-3">DALL-E</a></strong></li></ul><ul id="0b718d84-70d8-452b-915e-c5c476406a88" class="bulleted-list"><li style="list-style-type:disc"><ul id="2e5cea73-566a-40ad-b2d6-28b279d003f1" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Integrated with ChatGPT, DALL-E generates images from text prompts.</li></ul><ul id="1f75654a-5513-408b-a59b-bd0df71f02fe" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Design, education, marketing</li></ul><ul id="c210f933-0028-440e-bf6d-c8e8b78c4903" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="e0f3e5e4-29f5-4d1e-8393-091ee8f3a231" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://elevenlabs.io/">ElevenLabs</a></strong></li></ul><ul id="aa42d0f4-128d-4e16-8057-1c18e52be73b" class="bulleted-list"><li style="list-style-type:disc"><ul id="dca8ba20-0381-40ea-9ee1-675e90665f19" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>ElevenLabs is a speech<strong> </strong>AI tool that can generate spoken voice-over audio from text in different languages.</li></ul><ul id="3fae01d4-93b9-4ddb-83e4-6c5eba27ec01" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Content creation, education, marketing, production</li></ul><ul id="b7c2f244-a913-4ec2-8f77-626e905ac032" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul></li></ul><ul id="65688cb0-6693-4b87-b546-70a20c9be369" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://ads.google.com/home/campaigns/ai-powered-ad-solutions/">Google Ads</a></strong></li></ul><ul id="765a5eb5-9ad0-4486-9e6d-5776e9754bc0" class="bulleted-list"><li style="list-style-type:disc"><strong>Description:</strong> Google Ads helps businesses reach customers around the world, driving growth and performance. Google Ads makes it easy to create campaigns, measure impact and improve your results. Put Google AI to work for your business with the <a href="https://support.google.com/google-ads/answer/13580022?hl=en&amp;sjid=7328039753382751689-NC#zippy=%2Cget-ready-with-the-right-foundation%2Ctake-action-to-maximize-results-with-ai-powered-campaigns%2Cshift-mindsets-to-set-your-org-up-for-success">Google Ads AI Essentials</a></li></ul><p id="57590451-b561-4a96-a7ef-18edf089cf75" class="">. Learn more with the</p><p id="f181e43e-b670-4ad1-9bc9-6fcffc525209" class=""><a href="https://www.youtube.com/playlist?list=PLNBdIP33wJ3r0QPgN9B1toGQPY_cgeVHR">AI Explored video series</a></p><ul id="c444a6a0-254b-4445-a4fc-9e8ed732832c" class="bulleted-list"><li style="list-style-type:disc">.<strong>Example industries: </strong>Marketing, Advertising<strong>Stand-alone or integrated:</strong> Integrated</li></ul><ul id="3b771ed3-3845-46ab-9865-11c1de988cee" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.midjourney.com/home">Midjourney</a></strong></li></ul><ul id="2c3efc2e-e3d0-4d93-88f3-574b01eda697" class="bulleted-list"><li style="list-style-type:disc"><ul id="881303cb-a5ce-407e-a226-024d45c6234e" class="bulleted-list"><li style="list-style-type:circle"><strong>Description: </strong>Integrated into Discord, Midjourney can generate images from text prompts.</li></ul><ul id="2e345ba3-02ac-4991-b155-411a4e849f5b" class="bulleted-list"><li style="list-style-type:circle"><strong>Example industries: </strong>Design, education, marketing</li></ul><ul id="744821f2-b553-4c54-8a40-433edb81ab84" class="bulleted-list"><li style="list-style-type:circle"><strong>Stand-alone or integrated: </strong>Integrated</li></ul></li></ul><ul id="3a4fb712-dd03-47ae-b7dc-a43d4b01e9c2" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://runwayml.com/">Runway</a></strong></li></ul><ul id="9f9c7cc8-d609-4c8f-834c-4a157f9f9fd6" class="bulleted-list"><li style="list-style-type:disc"><strong>Description: </strong>Runway can generate a new video from a text prompt or edit an existing video’s style or focus area, and remove people or other elements.</li></ul><ul id="d97b04c9-52f6-4ead-8123-86d06b6b9965" class="bulleted-list"><li style="list-style-type:disc"><strong>Example industries: </strong>Content creation, design, marketing, production</li></ul><ul id="7b4be34c-f4f3-41a2-969f-f62c8059387f" class="bulleted-list"><li style="list-style-type:disc"><strong>Stand-alone or integrated: </strong>Stand-alone</li></ul><figure id="fff406ef-71a5-4ca4-8a02-04af02bcaa54" class="link-to-page"><a href="Card%20Game%20fff406ef71a54ca48a0204af02bcaa54.html">Card Game</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

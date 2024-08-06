@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Google AI essential course</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c58143fd-64d3-4d60-9d34-706f4ceb720f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧠</span></div><h1 class="page-title">Google AI essential course</h1><p class="page-description"></p></header><div class="page-body"><h2 id="5009d44a-7440-4ccd-b0b6-00b03bc82193" class=""><strong>Course progress</strong></h2><p id="b795a391-293b-4522-9613-b1d6c0b4eeef" class="">Google AI Essentials has five modules:</p><ul id="c8b5d5bd-e8a0-4bd9-a510-1831324b97c6" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.coursera.org/learn/google-ai-essentials/home/module/1">Introduction to AI</a></strong></li></ul><ul id="b143289f-ea6f-4028-a31e-627762efd15e" class="toggle"><li><details open=""><summary><strong></strong>(<em>current module</em>): Discover how AI works and explore foundational AI concepts, such as machine learning. Learn about the rise of generative AI and how to perform tasks with it. By the end of this module, you’ll have an understanding of the capabilities and limitations of AI tools and how to integrate generative AI in the workplace.</summary><figure id="6b1a75d9-da0c-4607-9b7e-4980fcc05ccb" class="link-to-page"><a href="Module%201%206b1a75d9da0c46079b7e4980fcc05ccb.html">Module 1</a></figure></details></li></ul><ul id="9d72455e-6ca8-4e2f-844c-aba3ed6379c7" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.coursera.org/learn/google-ai-essentials/home/module/2">Maximize Productivity With AI Tools</a></strong></li></ul><ul id="74e72255-1872-4b85-a17d-b475c0eaf3b2" class="toggle"><li><details open=""><summary><strong>: </strong>Leverage generative AI tools to speed up work tasks and boost your productivity. Examine the important role humans play in the effective use of AI, and understand the types of workplace tasks you can augment with AI. By the end of this module, you will be able to determine if AI is right for a given task and how to use AI to accelerate workflows.</summary><figure id="8bbce4a6-6107-405b-819a-e74f2b338b5d" class="link-to-page"><a href="Module%202%208bbce4a66107405b819ae74f2b338b5d.html">Module 2</a></figure></details></li></ul><ul id="297b794d-7e81-442b-9d15-c8034f025608" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.coursera.org/learn/google-ai-essentials/home/module/3">Discover the Art of Prompt Engineering</a></strong></li></ul><ul id="f807af98-e9e5-4a09-b47a-c640bd0bd799" class="toggle"><li><details open=""><summary><strong>: </strong>Write effective prompts to get the output you want. Learn how to incorporate prompting techniques, such as few-shot prompting, into your work. Understand how generative AI tools produce output and the importance of evaluating output before using it. By the end of this module, you will be able to write clear and specific prompts and produce outputs that help accomplish workplace tasks.</summary><figure id="cf3d06ae-c1fd-40e9-8e7b-2d74f63fb4b5" class="link-to-page"><a href="Module%203%20cf3d06aec1fd40e98e7b2d74f63fb4b5.html">Module 3</a></figure></details></li></ul><ul id="a5086150-e4f5-4e93-9643-845b0642cd20" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.coursera.org/learn/google-ai-essentials/home/module/4">Use AI Responsibly</a></strong></li></ul><ul id="42ba96af-9dc3-4fc7-abb4-158e74a3483f" class="toggle"><li><details open=""><summary><strong>: </strong>Use AI responsibly by mitigating unfair biases and inaccuracies. Learn how to apply a framework of AI harms to sample workplace scenarios and recognize the security risks of using AI in the workplace. By the end of this module, you will gain an understanding of how to use AI responsibly and effectively, and a checklist to help you do it.</summary></details></li></ul><ul id="d9f1cf73-d8c7-42fe-ba22-3170f6bd4f2a" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.coursera.org/learn/google-ai-essentials/home/module/5">Stay Ahead of the AI Curve</a></strong></li></ul><ul id="861572f0-6b82-4a93-b522-ca6ddc42175e" class="toggle"><li><details open=""><summary><strong>:</strong>Continue developing your skills within the current and emerging AI landscape. Learn about the ways organizations have leveraged AI and consider how these innovations may inspire your own AI-powered workplace solutions. By the end of this module, you will develop a strategy to stay up to date with future AI developments.</summary><figure id="5ac5e91b-5fa0-4391-a551-b0bbdb71b16d"><div class="source">https://docs.google.com/document/d/1mtRBEVXVcL6n85ILg0Wn4KJExzRSruOvtP_lXXf1EhU/edit?usp=sharing&amp;resourcekey=0-PsGjM4KV3E5bFw8G_rSvvw</div></figure><figure id="fc9c804f-87e4-416a-b294-1e9b77d309f1" class="link-to-page"><a href="action%20plan%20fc9c804f87e4416ab2941e9b77d309f1.html">action plan</a></figure><p id="8c5ceac3-6241-4773-a842-14fbb6cbc155" class=""><a href="https://www.coursera.org/learn/google-ai-essentials/lecture/7uFmr/google-ai-essentials-conclusion?trk_ref=coach_copy">Google AI Essentials Conclusion</a>  Jun 18, 2024</p><h2 id="6487834e-7ee4-47a3-87dc-47da16ff4c81" class="">Google AI Essentials: Course Completion Summary</h2><p id="083d96b3-b956-4a39-8a9d-5bb6969f5efa" class=""><strong>Congratulations on completing the Google AI Essentials course!</strong></p><p id="b8d6d872-39bd-4155-bb48-ca3b9e9171ba" class="">This course has provided you with a comprehensive introduction to the world of AI and its potential applications in various fields. You&#x27;ve explored the fundamentals of AI, including its capabilities, limitations, and ethical considerations.</p><p id="72f489d3-92ff-4150-8bd9-e135b4118f80" class="">Here&#x27;s a summary of the key topics covered in the course:</p><p id="59f769d1-c214-4f5b-8ab0-18da332ea379" class=""><strong>Module 1: Introduction to AI</strong></p><ul id="4ab746c4-6031-429e-bc17-5831b7de44a0" class="bulleted-list"><li style="list-style-type:disc">Understanding the definition and history of AI</li></ul><ul id="31bfd4f8-7fb3-41fe-89b8-c1e468272106" class="bulleted-list"><li style="list-style-type:disc">Exploring the different types of AI and their applications</li></ul><ul id="6c28b10e-dcd8-42bb-b68d-ed4e63fb1ec3" class="bulleted-list"><li style="list-style-type:disc">Recognizing the capabilities and limitations of AI in the workplace</li></ul><p id="2e1b83bb-c9d9-4420-9483-19d592b67a6a" class=""><strong>Module 2: Maximize Productivity With AI Tools</strong></p><ul id="157c1445-926a-42ae-b43e-cd533ef3fb2f" class="bulleted-list"><li style="list-style-type:disc">Learning the basics of AI models and their training process</li></ul><ul id="c9309035-2899-405d-8c2a-0c82d060fd8c" class="bulleted-list"><li style="list-style-type:disc">Discovering various common applications of AI tools</li></ul><ul id="e8a1262c-c7f1-4001-bdd0-3254cfa70087" class="bulleted-list"><li style="list-style-type:disc">Identifying ways to use AI tools to increase productivity, optimize workflow, and solve problems</li></ul><p id="a0d09874-3f81-42c3-9c88-5304d432cb93" class=""><strong>Module 3: Discover the Art of Prompt Engineering</strong></p><ul id="f364242f-995f-4c66-80e3-6dcbfba89eb4" class="bulleted-list"><li style="list-style-type:disc">Understanding how large language models produce output</li></ul><ul id="c91fe47c-548f-41f7-a9b9-8c027288f300" class="bulleted-list"><li style="list-style-type:disc">Mastering the art of writing effective prompts for AI tools</li></ul><ul id="9296fe33-beb6-43e8-8627-527e8af53983" class="bulleted-list"><li style="list-style-type:disc">Analyzing output and revising prompts for optimal results</li></ul><p id="d497f75c-8250-4c5a-8c6b-d5f84dacbdbe" class=""><strong>Module 4: Use AI Responsibly</strong></p><ul id="f9a8b72a-c8ec-4c0c-875b-e31c5600dd9e" class="bulleted-list"><li style="list-style-type:disc">Recognizing common risks and biases associated with AI tools</li></ul><ul id="a588d60f-6ec6-420b-bb0f-089f50f0d6f4" class="bulleted-list"><li style="list-style-type:disc">Learning how to mitigate these risks and promote responsible AI practices</li></ul><ul id="b8eae310-f4b1-4a70-bd63-d943d23f1423" class="bulleted-list"><li style="list-style-type:disc">Understanding the potential social and security implications of AI</li></ul><p id="f895e92f-ca94-4820-b4ce-5f63cbfbc14d" class=""><strong>Module 5: Stay Ahead of the AI Curve</strong></p><ul id="6416c8a9-07f0-4c77-8a5c-97f8b3455f03" class="bulleted-list"><li style="list-style-type:disc">Evaluating AI tools for potential workplace applications</li></ul><ul id="f09294c0-b447-47cd-bef7-912d677c5bbf" class="bulleted-list"><li style="list-style-type:disc">Learning from innovative AI implementations across different industries</li></ul><ul id="90fe49ff-a6ac-483b-868e-4f0624e7510e" class="bulleted-list"><li style="list-style-type:disc">Identifying ways to leverage AI in your day-to-day work</li></ul><p id="19398180-4f00-4fb3-a476-b50df7cb1485" class=""><strong>Next Steps:</strong></p><ul id="f911df2a-3655-469c-8de3-58bd7e1897f7" class="bulleted-list"><li style="list-style-type:disc"><strong>Stay connected:</strong> Network with others in your industry to learn about the latest AI advancements.</li></ul><ul id="9aedd6f9-19c5-469a-944f-9f6cd02e3e72" class="bulleted-list"><li style="list-style-type:disc"><strong>Advocate for responsible AI:</strong> Promote ethical AI practices within your company.</li></ul><ul id="e0fefdff-2b66-4171-aa78-fdce0face3c2" class="bulleted-list"><li style="list-style-type:disc"><strong>Deepen your knowledge:</strong> Focus on specific aspects of AI that interest you, such as multimodal models or prompt engineering techniques.</li></ul><ul id="e0e924bf-36f3-43a4-a615-0610df11cf6e" class="bulleted-list"><li style="list-style-type:disc"><strong>Start leveraging AI:</strong> Utilize the AI tools introduced in this course or explore new ones to enhance your daily work.</li></ul><p id="a018302c-5da2-4c0b-a296-16b34a30bdfa" class=""><strong>Remember, your journey with AI doesn&#x27;t end here. Keep exploring, learning, and innovating!</strong></p><p id="4d8da8b1-c129-40f3-afb0-7612d5e94497" class=""><strong>Additional Resources:</strong></p><ul id="0b91781c-cdc5-441f-88b6-4b009a0d6f27" class="bulleted-list"><li style="list-style-type:disc">Coursera AI Catalog: https://www.coursera.org/browse/artificial-intelligence</li></ul><ul id="ffb0a0fa-fc22-4041-80fa-9a3cc8c98c17" class="bulleted-list"><li style="list-style-type:disc">Google AI Blog: https://ai.googleblog.com/</li></ul><ul id="3b315558-b811-4ecd-a61f-49d13c8900b1" class="bulleted-list"><li style="list-style-type:disc">OpenAI Blog: https://openai.com/blog/</li></ul><p id="59308b12-d1e8-4243-8520-619a1a7fc131" class=""><strong>I hope this summary has been helpful. Please let me know if you have any questions.</strong></p></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
